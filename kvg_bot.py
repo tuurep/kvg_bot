@@ -33,6 +33,7 @@ def kvg(bot, update):
         search_term = update.message.text[len('/kvg'):].strip()
 
     if search_term == '':
+        if last_message.text == '': return
         search_term = last_message.text
 
     bot.sendMessage(update.message.chat_id, text=create_url(search_term),
